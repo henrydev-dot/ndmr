@@ -19,6 +19,21 @@
   --success: #34d399;
   --danger: #f87171;
   --warning: #fbbf24;
+
+  /* RGB triplets so Tailwind opacity modifiers (e.g. bg-accent/10) work */
+  --bg-primary-rgb: 5 5 7;
+  --bg-secondary-rgb: 12 12 18;
+  --surface-card-rgb: 18 18 26;
+  --surface-elevated-rgb: 26 26 36;
+  --accent-primary-rgb: 139 92 246;
+  --accent-secondary-rgb: 167 139 250;
+  --accent-deep-rgb: 91 33 182;
+  --text-primary-rgb: 244 244 246;
+  --text-secondary-rgb: 156 160 172;
+  --text-muted-rgb: 92 95 107;
+  --success-rgb: 52 211 153;
+  --danger-rgb: 248 113 113;
+  --warning-rgb: 251 191 36;
 }
 
 html {
