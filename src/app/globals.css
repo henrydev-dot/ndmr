@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #050507;
+  --bg-secondary: #0c0c12;
+  --surface-card: #12121a;
+  --surface-elevated: #1a1a24;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(139, 92, 246, 0.35);
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #a78bfa;
+  --accent-deep: #5b21b6;
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --text-primary: #f4f4f6;
+  --text-secondary: #9ca0ac;
+  --text-muted: #5c5f6b;
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #fbbf24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+::selection {
+  background: var(--accent-deep);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-elevated);
+  border-radius: 5px;
+}
+
+@layer components {
+  .micro-label {
+    @apply text-[0.8125rem] uppercase tracking-[0.12em] text-text-muted font-medium;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-pill bg-accent px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:shadow-glow-sm;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-pill border border-border-accent bg-transparent px-6 py-3 text-sm font-medium text-text-primary transition-all duration-300 hover:bg-accent/10;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-text-secondary transition-colors hover:text-accent;
+  }
+  .card {
+    @apply rounded-card border border-border-subtle bg-surface-card transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-border-accent hover:-translate-y-1;
+  }
+  .input-dark {
+    @apply w-full rounded-xl border border-border-subtle bg-bg-secondary px-4 py-3 text-sm text-text-primary placeholder:text-text-muted outline-none transition-colors focus:border-border-accent;
+  }
+}
+
+/* 3D flashcard flip */
+.flip-card {
+  perspective: 1200px;
+}
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Hero wave animation */
+@keyframes drift {
+  0% { transform: translateX(-5%) translateY(0) rotate(0deg); }
+  50% { transform: translateX(5%) translateY(-4%) rotate(2deg); }
+  100% { transform: translateX(-5%) translateY(0) rotate(0deg); }
+}
+.wave-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+.wave-drift-slow {
+  animation: drift 28s ease-in-out infinite reverse;
+}
