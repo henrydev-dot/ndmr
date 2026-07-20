@@ -8,9 +8,9 @@ export default function HeroWaves() {
       >
         <defs>
           <linearGradient id="waveGrad1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#A10E3A" stopOpacity="0" />
-            <stop offset="50%" stopColor="#FF2D6B" stopOpacity="0.65" />
-            <stop offset="100%" stopColor="#A10E3A" stopOpacity="0" />
+            <stop offset="0%" stopColor="#5A189A" stopOpacity="0" />
+            <stop offset="50%" stopColor="#9D4EDD" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#5A189A" stopOpacity="0" />
           </linearGradient>
         </defs>
         {Array.from({ length: 14 }).map((_, i) => (

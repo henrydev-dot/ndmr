@@ -8,11 +8,11 @@
   --surface-card: #12121a;
   --surface-elevated: #1a1a24;
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(255, 45, 107, 0.40);
-  --accent-primary: #ff2d6b;
-  --accent-secondary: #ff7aa2;
-  --accent-deep: #a10e3a;
-  --accent-glow: rgba(255, 45, 107, 0.30);
+  --border-accent: rgba(142, 45, 226, 0.45);
+  --accent-primary: #8e2de2;
+  --accent-secondary: #b57bff;
+  --accent-deep: #5a189a;
+  --accent-glow: rgba(142, 45, 226, 0.32);
   --text-primary: #f4f4f6;
   --text-secondary: #9ca0ac;
   --text-muted: #5c5f6b;
@@ -25,9 +25,9 @@
   --bg-secondary-rgb: 12 12 18;
   --surface-card-rgb: 18 18 26;
   --surface-elevated-rgb: 26 26 36;
-  --accent-primary-rgb: 255 45 107;
-  --accent-secondary-rgb: 255 122 162;
-  --accent-deep-rgb: 161 14 58;
+  --accent-primary-rgb: 142 45 226;
+  --accent-secondary-rgb: 181 123 255;
+  --accent-deep-rgb: 90 24 154;
   --text-primary-rgb: 244 244 246;
   --text-secondary-rgb: 156 160 172;
   --text-muted-rgb: 92 95 107;
@@ -121,4 +121,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 .wave-drift-slow {
   animation: drift 28s ease-in-out infinite reverse;
+}
+
+/* Site-wide animated neon ribbons */
+@keyframes ribbon-flow {
+  0% { transform: translate3d(-6%, 0, 0) rotate(-1.5deg) scale(1.08); }
+  50% { transform: translate3d(6%, -3%, 0) rotate(1.5deg) scale(1.14); }
+  100% { transform: translate3d(-6%, 0, 0) rotate(-1.5deg) scale(1.08); }
+}
+.ribbon-flow {
+  animation: ribbon-flow 30s ease-in-out infinite;
+}
+.ribbon-flow-alt {
+  animation: ribbon-flow 42s ease-in-out infinite reverse;
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.14; }
+  50% { opacity: 0.26; }
+}
+.glow-pulse {
+  animation: glow-pulse 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-drift,
+  .wave-drift-slow,
+  .ribbon-flow,
+  .ribbon-flow-alt,
+  .glow-pulse {
+    animation: none;
+  }
 }
