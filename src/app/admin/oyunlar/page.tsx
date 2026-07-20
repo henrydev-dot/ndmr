@@ -316,7 +316,7 @@ export default function AdminGamesPage() {
                           name="correctIndex"
                           checked={Number(form.correctIndex) === i}
                           onChange={() => set("correctIndex", i)}
-                          className="h-4 w-4 accent-[#a64de0]"
+                          className="h-4 w-4 accent-[#ff2d6b]"
                         />
                         <input
                           className="input-dark !py-2"

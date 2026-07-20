@@ -136,8 +136,8 @@ export default function TestRunner({ slug }: { slug: string }) {
                   />
                   <Radar
                     dataKey="value"
-                    stroke="#A64DE0"
-                    fill="#A64DE0"
+                    stroke="#FF2D6B"
+                    fill="#FF2D6B"
                     fillOpacity={0.35}
                   />
                 </RadarChart>
